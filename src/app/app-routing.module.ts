@@ -14,6 +14,11 @@ const appRoutes: Routes = [
     component: AuthComponent,
     children: [
       {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
+      },
+      {
         path: 'login',
         component: LoginComponent
       },
@@ -27,6 +32,11 @@ const appRoutes: Routes = [
     path: 'member',
     component: MemberComponent,
     children: [
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+      },
       {
         path: 'home',
         component: HomeComponent
