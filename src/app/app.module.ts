@@ -13,6 +13,9 @@ import { MemberComponent } from './member/member.component';
 import { HomeComponent } from './member/home/home.component';
 import { PageNotFoundComponent } from './404/page-not-found.component';
 
+import { AuthService } from './_services/auth.service';
+import { AuthGuard } from './_services/auth-guard.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,7 @@ import { PageNotFoundComponent } from './404/page-not-found.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ AuthService, AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

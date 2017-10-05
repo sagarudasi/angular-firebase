@@ -5,7 +5,6 @@
   <div class="section">
     <div class="container">
       <div class="box">
-        <form>
           <div class="field">
             <p class="control has-icons-left has-icons-left">
               <input class="input" type="email" placeholder="Email">
@@ -29,11 +28,10 @@
           </div>
           <div class="field">
             <p class="control">
-              <button class="button is-success">Login</button>
+              <button class="button is-success" (click)="login()">Login</button>
               <a class="button" routerLink="/auth/register" routerLinkActive="is-active">Register</a>
             </p>
           </div>
-        </form>
       </div>
     </div>
   </div>

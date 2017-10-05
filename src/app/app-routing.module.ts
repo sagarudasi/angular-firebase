@@ -10,6 +10,8 @@ import { MemberComponent } from './member/member.component';
 import { HomeComponent } from './member/home/home.component';
 import { PageNotFoundComponent } from './404/page-not-found.component';
 
+import { AuthGuard } from './_services/auth-guard.service';
+
 const appRoutes: Routes = [
   {
     path: '',
@@ -46,6 +48,8 @@ const appRoutes: Routes = [
   {
     path: 'member',
     component: MemberComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     children: [
       {
         path: '',
@@ -68,7 +72,7 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     )
   ],
   exports: [
