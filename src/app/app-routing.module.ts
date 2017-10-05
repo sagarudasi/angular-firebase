@@ -12,6 +12,11 @@ import { PageNotFoundComponent } from './404/page-not-found.component';
 
 const appRoutes: Routes = [
   {
+    path: '',
+    redirectTo: 'auth/login',
+    pathMatch: 'full'
+  },
+  {
     path: 'auth',
     component: AuthComponent,
     children: [
